@@ -7,7 +7,7 @@ In these examples we will work with Flex lexer for C target, and JFlex lexer for
 ---
 ## Setup
 
-#### Linux
+### Linux
 * Install Flex with APT:
 ```
 sudo apt install flex
@@ -22,7 +22,7 @@ sudo apt install jflex
 ```
 sudo apt install bison
 ```
-#### macOS
+### macOS
 ATTENTION: the os must be updated
 
 * Install Flex with Homebrew:
@@ -44,7 +44,7 @@ Could be necessary: `brew link bison --force`
 ---
 ## C
 
-#### Flex files - ".l"
+### Flex files - ".l"
 Structure:
 1. C declarations (include library and function declaration)
 2. Flex declarations (espressioni regolari)
@@ -65,7 +65,7 @@ Additional C code
 ```
 
 Flex Official Documentation: ftp://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html
-#### Bison files - ".y"
+### Bison files - ".y"
 Structure:
 1. C declarations (include library and function declaration)
 2. Bison declarations (token definition)
@@ -85,7 +85,7 @@ Bison declarations
 Additional C code
 ```
 
-#### Compilation and Execution
+### Compilation and Execution
 
 1. Compile the `example.l` file using flex:
 ```
@@ -112,7 +112,7 @@ The "example" executable call *lex.yy.c* for the tokens and make a tree.
 
 ---
 ## Java
-#### JFlex files - ".l"
+### JFlex files - ".l"
 Structure:
 1. Imports and packages(library import)
 2. Options and declarations (see documentation, there are a lot of options)
@@ -131,7 +131,7 @@ Structure:
 
 **JFlex Official Documentation**: https://jflex.de/manual.html
 
-#### Bison files - ".y"
+### Bison files - ".y"
 Structure:
 1. Definitions (public, class, prefix, etc...)
 2. Imports (library import)
@@ -160,7 +160,7 @@ Structure:
 <Additional Java code>
 ```
 
-#### Compilation and Execution
+### Compilation and Execution
 1. Compile the `example.l` file using flex:
 ```
 jflex example.l
@@ -183,7 +183,7 @@ javac *.java
 java Example < input-file
 ```
 ---
-### Useful links
+## Useful links
 * [Bison GNU whole project](https://www.gnu.org/software/bison/)
 
 * [Documentation - Bison Java parser](https://www.gnu.org/software/bison/manual/html_node/Java-Parsers.html)
