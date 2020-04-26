@@ -85,7 +85,7 @@ This generates two files: `example.tab.h` `example.tab.c.`
 
 3. Compile example.tab.c using
 ```bash
-gcc -o example example.tab.c lex.yy.c -lfl
+gcc -o example example.tab.c lex.yy.c -lm
 ```
 
 4. Test the executable using
@@ -96,6 +96,9 @@ The "example" executable call *lex.yy.c* for the tokens and make a tree.
 
 ---
 ## Java
+Bison 3.5 is needed:
+* Download: [mirror Bison 3.5](http://mirror.lihnidos.org/GNU/ftp/gnu/bison/)
+* Installation: [Install Bison 3.5](http://www.linuxfromscratch.org/lfs/view/development/chapter06/bison.html)
 ### JFlex files - ".l"
 Structure:
 1. Imports and packages(library import)
