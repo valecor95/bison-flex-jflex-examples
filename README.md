@@ -8,35 +8,19 @@ In these examples we will work with Flex lexer for C target, and JFlex lexer for
 ## Setup
 
 ### Linux
-* Install Flex with APT:
-```
+* Install Flex, JFlex and Bison with APT:
+```bash
 sudo apt install flex
-```
-
-* Install JFlex with APT
-```
 sudo apt install jflex
-```
-
-* Install Bison with APT
-```
 sudo apt install bison
 ```
 ### macOS
 ATTENTION: the os must be updated
 
-* Install Flex with Homebrew:
-```
+* Install Flex, JFlex and Bison with Homebrew:
+```bash
 brew install flex
-```
-
-* Install JFlex with Homebrew
-```
 brew install jflex
-```
-
-* Install Bison with Homebrew
-```
 brew install bison
 ```
 Could be necessary: `brew link bison --force`
@@ -50,7 +34,7 @@ Structure:
 2. Flex declarations (espressioni regolari)
 3. Token definition
 4. Additional C code (function definitions, main)
-```
+```bison
 %{
     C declarations
 %}
@@ -71,7 +55,7 @@ Structure:
 2. Bison declarations (token definition)
 3. Grammar rules
 4. Additional C code (function definitions, main)
-```
+```bison
 %{
     C declarations
 %}
@@ -88,24 +72,24 @@ Additional C code
 ### Compilation and Execution
 
 1. Compile the `example.l` file using flex:
-```
+```bash
 flex -l example.l
 ```
 This generates the file: `lex.yy.c`
 
 2. Compile the `example.y` file using bison: 
-```
+```bash
 bison -d example.y
 ```
 This generates two files: `example.tab.h` `example.tab.c.`
 
 3. Compile example.tab.c using
-```
+```bash
 gcc -o example example.tab.c lex.yy.c -lfl
 ```
 
 4. Test the executable using
-```
+```bash
 ./example < “inpute-file”
 ```
 The "example" executable call *lex.yy.c* for the tokens and make a tree.
@@ -117,7 +101,7 @@ Structure:
 1. Imports and packages(library import)
 2. Options and declarations (see documentation, there are a lot of options)
 3. Lexical rules
-```
+```bison
 <UserCode>
 
 %%
@@ -138,7 +122,7 @@ Structure:
 3. Main Java code
 4. Grammar rules
 5. Additional Java code (function definitions)
-```
+```bison
 %define <Definitions>
 
 %code imports{
@@ -162,36 +146,31 @@ Structure:
 
 ### Compilation and Execution
 1. Compile the `example.l` file using flex:
-```
+```bash
 jflex example.l
 ```
 This generates the file: `Yylex.java` (you can change the name if *%define api.prefix {name-you-want}* is setted)
 
 2. Compile the `example.y` file using bison: 
-```
+```bash
 bison example.y -L java
 ```
 This generate: `Example.java`
 
 3. Compile all using:
-```
+```bash
 javac *.java
 ```
 
 4. Test the executable using
-```
+```bash
 java Example < input-file
 ```
 ---
 ## Useful links
 * [Bison GNU whole project](https://www.gnu.org/software/bison/)
-
 * [Documentation - Bison Java parser](https://www.gnu.org/software/bison/manual/html_node/Java-Parsers.html)
-
 * [StackOverflow - "bison" tag](https://stackoverflow.com/questions/tagged/bison)
-
 * [VIDEO - Tutorial: programming with lex/yacc](https://www.youtube.com/playlist?list=PLkB3phqR3X43IRqPT0t1iBfmT5bvn198Z)
-
 * [VIDEO - Flex/Bison Tutorial](https://www.youtube.com/playlist?list=PLYwB_l2-dW_TDMsd2Us_V8yaJlCzDOtlU)
-
 * [VIDEO - Getting started with JFlex](https://www.youtube.com/watch?v=IV1Rwq7ERR4&list=RDCMUC6-g6xhqyX14ENhZBC2fznw&start_radio=1&t=621)
