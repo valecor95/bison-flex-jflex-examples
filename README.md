@@ -64,7 +64,7 @@ Flex declarations
 Additional C code
 ```
 
-Flex Official Documentation: ftp://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html
+Flex Official Documentation: https://github.com/westes/flex
 ### Bison files - ".y"
 Structure:
 1. C declarations (include library and function declaration)
