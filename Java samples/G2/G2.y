@@ -23,9 +23,9 @@ prog:
 ;
 
 srule: 
-    '(' srule ')' {System.out.println("( S )\n");}
-    | srule srule {System.out.println("SS\n");}
-    | '(' ')' {System.out.println("( )\n");}
+    '(' srule ')' 
+    | srule srule 
+    | '(' ')' 
 ;
 %%
 
@@ -52,6 +52,7 @@ class G2Lexer implements G2.Lexer {
   }
 
   public int yylex () throws IOException{
+    System.out.println(gl.yytext());
     return gl.yylex();
   }
 }

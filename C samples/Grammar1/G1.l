@@ -10,5 +10,6 @@
 
 "a" { return (A);}
 "b" { return (B);}
+.   {return *yytext}
 
 %%

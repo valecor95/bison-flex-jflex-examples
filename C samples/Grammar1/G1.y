@@ -1,8 +1,10 @@
+%define parse.error verbose
+
 %{
 #include <stdio.h>
 
 int yylex();
-int yyerror(char *s);
+int yyerror(const char *msg);
 
 %}
 
@@ -25,9 +27,9 @@ srule
 
 %%
 
-int yyerror(char *s){
-  printf("\nParsing result:  %s\n\n", s);
-	return 0;
+int yyerror(const char *msg){
+	fprintf(stderr, "%s\n", msg);
+  return 0;
 }
 
 int main()

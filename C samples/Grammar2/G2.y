@@ -1,8 +1,10 @@
+%define parse.error verbose
+
 %{
 #include <stdio.h>
 
 int yylex();
-int yyerror(char *s);
+int yyerror(const char *msg);
 
 %}
 
@@ -21,15 +23,14 @@ srule:
 
 %%
 
-int yyerror(char *s){
-	return 0;
+int yyerror(const char *msg){
+	fprintf(stderr, "%s\n", msg);
+  return 0;
 }
 
 int main()
 {
     int parse = yyparse();
     if(parse == 0) printf("\nParsing result:  SUCCESS\n\n");
-    else if(parse == 1) printf("\nParsing result: Syntax error\n\n");
-    else printf("\nParsing result: Memory exhaustion\n\n");
     return 0;
 }

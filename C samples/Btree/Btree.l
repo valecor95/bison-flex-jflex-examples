@@ -13,5 +13,6 @@ key     ([0-9])+
 {key} {return (KEY);}
 "(" { return (L_PAR);}
 ")" { return (R_PAR);}
+. {return *yytext;}
 
 %%
