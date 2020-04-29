@@ -25,6 +25,8 @@ brew install bison
 ```
 Could be necessary: `brew link bison --force`
 
+**NOTE:** If the previous two alternatives goes wrong, download the mirror from [here](http://mirror.lihnidos.org/GNU/ftp/gnu/bison/) and follow this guide to install: [Installation from scratch](http://www.linuxfromscratch.org/lfs/view/development/chapter06/bison.html)
+
 ---
 ## C
 
