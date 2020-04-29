@@ -172,7 +172,10 @@ java Example < input-file
 ---
 ## Useful links
 * [Bison GNU whole project](https://www.gnu.org/software/bison/)
-* [Documentation - Bison Java parser](https://www.gnu.org/software/bison/manual/html_node/Java-Parsers.html)
+* [Bison Official Documentation](https://www.gnu.org/software/bison/manual/bison.html)
+* [Flex Documentation](https://github.com/westes/flex)
+* [JFlex Documentation](https://jflex.de/manual.html)
+* [Bison Java - Documentation](https://www.gnu.org/software/bison/manual/html_node/Java-Parsers.html)
 * [StackOverflow - "bison" tag](https://stackoverflow.com/questions/tagged/bison)
 * [VIDEO - Tutorial: programming with lex/yacc](https://www.youtube.com/playlist?list=PLkB3phqR3X43IRqPT0t1iBfmT5bvn198Z)
 * [VIDEO - Flex/Bison Tutorial](https://www.youtube.com/playlist?list=PLYwB_l2-dW_TDMsd2Us_V8yaJlCzDOtlU)
