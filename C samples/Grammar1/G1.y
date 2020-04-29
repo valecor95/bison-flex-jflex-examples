@@ -17,12 +17,12 @@ prog:
 ;
 
 srule   
-    : A srule A {printf("a S a\n");}
-    | B srule B {printf("b S b\n");}
-    | A A       {printf("aa\n");}
-    | B B       {printf("bb\n");}
-    | A         {printf("a\n");}
-    | B         {printf("b\n");}
+    : A srule A 
+    | B srule B 
+    | A A       
+    | B B       
+    | A         
+    | B
 ;
 
 %%

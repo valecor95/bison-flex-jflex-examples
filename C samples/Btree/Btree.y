@@ -8,7 +8,7 @@ int yyerror(const char *msg);
 
 %}
 
-%token KEY L_PAR R_PAR
+%token KEY
 
 %%
 
@@ -17,8 +17,8 @@ prog:
 ;
 
 srule   
-    : L_PAR R_PAR {printf("()\n");}
-    | L_PAR KEY srule srule R_PAR {printf("(key S S)\n");}
+    : '(' ')'
+    | '(' KEY srule srule ')' 
 ;
 
 %%
@@ -28,9 +28,8 @@ int yyerror(const char *msg){
   return 0;
 }
 
-int main()
-{
-    int parse = yyparse();
-    if(parse == 0) printf("\nParsing result:  SUCCESS\n\n");
-    return 0;
+int main(){
+  int parse = yyparse();
+  if(parse == 0) printf("\nParsing result:  SUCCESS\n\n");
+  return 0;
 }

@@ -1,4 +1,5 @@
 %option noyywrap
+%option yylineno
 
 %{
 #include <stdio.h>
@@ -10,9 +11,9 @@ key     ([0-9])+
 
 %%
 
-{key} {return (KEY);}
-"(" { return (L_PAR);}
-")" { return (R_PAR);}
-. {return *yytext;}
+{key}   {printf("[token at line %d: \"%s\"]\n", yylineno, yytext); return (KEY);}
+"("     {printf("[token at line %d: \"(\"]\n", yylineno); return '(';}
+")"     {printf("[token at line %d: \")\"]\n", yylineno); return ')';}
+.       {return *yytext;}
 
 %%

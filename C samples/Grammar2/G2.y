@@ -16,9 +16,9 @@ prog:
 ;
 
 srule: 
-    L_PAR srule R_PAR {printf("( S )\n");}
-    | srule srule {printf("SS\n");}
-    | L_PAR R_PAR {printf("( )\n");}
+    L_PAR srule R_PAR
+    | srule srule
+    | L_PAR R_PAR
 ;
 
 %%
@@ -28,9 +28,8 @@ int yyerror(const char *msg){
   return 0;
 }
 
-int main()
-{
-    int parse = yyparse();
-    if(parse == 0) printf("\nParsing result:  SUCCESS\n\n");
-    return 0;
+int main(){
+  int parse = yyparse();
+  if(parse == 0) printf("\nParsing result:  SUCCESS\n\n");
+  return 0;
 }

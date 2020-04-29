@@ -1,5 +1,5 @@
-%define api.prefix {G2}
-%define api.parser.class {G2}
+%define api.prefix {Btree}
+%define api.parser.class {Btree}
 %define api.parser.public
 %define parse.error verbose
 
@@ -12,15 +12,15 @@
 
 %code {
   public static void main(String args[]) throws IOException {
-    G2Lexer lexer = new G2Lexer(System.in);
-    G2 parser = new G2(lexer);
+    BtreeLexer lexer = new BtreeLexer(System.in);
+    Btree parser = new Btree(lexer);
     if(parser.parse())
       System.out.println("Parsing Result = SUCCESS");
     return;
   }
 }
 
-%token L_PAR R_PAR UNKNOWN_TOKEN
+%token KEY UNKNOWN_TOKEN 
 
 %%
 prog:
@@ -28,17 +28,16 @@ prog:
 ;
 
 srule: 
-    L_PAR srule R_PAR
-    | srule srule 
-    | L_PAR R_PAR
+    '(' ')'
+    | '(' KEY srule srule ')'
 ;
 %%
 
-class G2Lexer implements G2.Lexer {
+class BtreeLexer implements Btree.Lexer {
   InputStreamReader it;
   Yylex yylex;
 
-  public G2Lexer(InputStream is){
+  public BtreeLexer(InputStream is){
     it = new InputStreamReader(is);
     yylex = new Yylex(it);
   }
