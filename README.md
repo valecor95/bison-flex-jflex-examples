@@ -15,7 +15,7 @@ sudo apt install jflex
 sudo apt install bison
 ```
 ### macOS
-ATTENTION: the os must be updated
+ATTENTION: the os must be up-to-date
 
 * Install Flex, JFlex and Bison with Homebrew:
 ```bash
@@ -25,7 +25,7 @@ brew install bison
 ```
 Could be necessary: `brew link bison --force`
 
-**NOTE:** If the previous two alternatives goes wrong, download the mirror from [here](http://mirror.lihnidos.org/GNU/ftp/gnu/bison/) and follow this guide to install: [Installation from scratch](http://www.linuxfromscratch.org/lfs/view/development/chapter06/bison.html)
+**NOTE:** If the previous two alternatives go wrong, download the mirror from [here](http://mirror.lihnidos.org/GNU/ftp/gnu/bison/) and follow this guide to install: [Installation from scratch](http://www.linuxfromscratch.org/lfs/view/development/chapter06/bison.html)
 
 ---
 ## C
@@ -92,7 +92,7 @@ gcc -o example example.tab.c lex.yy.c -lm
 
 4. Test the executable using
 ```bash
-./example < “inpute-file”
+./example < “input-file”
 ```
 The "example" executable call *lex.yy.c* for the tokens and make a tree.
 
@@ -160,7 +160,7 @@ This generates the file: `Yylex.java` (you can change the name if *%define api.p
 ```bash
 bison example.y -L java
 ```
-This generate: `Example.java`
+This generates: `Example.java`
 
 3. Compile all using:
 ```bash
